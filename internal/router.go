@@ -35,5 +35,7 @@ func SetupRouter(authHandler *handlers.AuthHandler, productHandler *handlers.Pro
 		}
 	}
 
+	r.GET("/api/v1/user/likes", likeHandler.GetUserLikes)
+
 	return r
 }

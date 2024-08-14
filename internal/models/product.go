@@ -19,3 +19,16 @@ type Comment struct {
 	UserID    uint   `gorm:"not null"`
 	ProductID uint   `gorm:"not null"`
 }
+
+type Image struct {
+	gorm.Model
+	URL       string `gorm:"not null"`
+	ProductID uint   `gorm:"not null"`
+	Product   Product
+}
+
+type Like struct {
+	gorm.Model
+	UserID    uint `gorm:"not null"`
+	ProductID uint `gorm:"not null"`
+}

@@ -90,8 +90,8 @@ func (s *ProductService) GetCommentsByProductID(productID uint) ([]models.Commen
 	return s.CommentRepo.GetCommentsByProductID(productID)
 }
 
-func (s *ProductService) AddProductImage(url string, productID uint) (*models.ProductImage, error) {
-	image := &models.ProductImage{
+func (s *ProductService) AddProductImage(url string, productID uint) (*models.Image, error) {
+	image := &models.Image{
 		URL:       url,
 		ProductID: productID,
 	}
@@ -103,6 +103,6 @@ func (s *ProductService) AddProductImage(url string, productID uint) (*models.Pr
 	return image, nil
 }
 
-func (s *ProductService) GetProductImagesByProductID(productID uint) ([]models.ProductImage, error) {
+func (s *ProductService) GetProductImagesByProductID(productID uint) ([]models.Image, error) {
 	return s.ProductImageRepo.GetProductImagesByProductID(productID)
 }
